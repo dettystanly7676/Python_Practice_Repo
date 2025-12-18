@@ -1,0 +1,88 @@
+
+Create database if not exists db_name -> to avoid conflicts
+
+create database Sample_DB
+
+use sample_db
+
+drop table books
+
+create table books(
+Book_ID int primary key,
+Title varchar(50),
+Author varchar(50),
+Genre varchar(50),
+Language_ varchar(50), 
+Published_Year int
+)
+
+insert into books(Book_ID,Title,Author,Genre,Language_,Published_Year) 
+values(001,'Pride and Prejudice','Jane Austen','Romance','English',1813)
+
+select * from books
+
+insert into books values
+(2,'To Kill a Mockingbird','Harper Lee','Southern Gothic, Coming-of-Age','English',1960),
+(3,'Nineteen Eighty-Four','George Orwell','Dystopian, Science Fiction','English',1949),
+(4,'The Little Prince','Antoine de Saint-Exupéry','Fantasy, Children Fiction','English',1943),
+(5,'The Great Gatsby','F. Scott Fitzgerald','Modernist, Jazz Age Tragedy','English',1925)
+
+update books set language_ = 'French' where book_id = 4
+
+insert into books values
+(2,'To Kill a Mockingbird','Harper Lee','Southern Gothic, Coming-of-Age','English',1960)
+
+select title,author from books
+
+select title from books where book_id = 1
+
+select title from books where published_year > 1947
+
+select * from books where published_year between 1947 and 2000 
+
+-- return title which contains and in it 
+select * from books where title like '%and%'
+
+-- return title which starts from 'to'
+select * from books where title like 'to%' 
+
+select * from books where genre in('romance') and language_ = 'english'
+
+-- returns count of title for english language and given alias Language_Count 
+select count(title) as Language_Count from books where language_='english'
+
+-- returns data of limit 2 
+select * from books order by published_year desc limit 2
+
+-- returns the entire genre column with count 
+select count(title) as bookcount, genre from books group by genre
+
+insert into books values
+(6,'Aadujeevitham','Benyamin','Romance','Malayalam',2011)
+
+update books set genre = 'Survival' where book_id = 6
+
+-- this will return error first because only primary key have the authorization to do updation 
+update books set genre = 'Survival Drama' where title = 'aadujeevitham'
+
+set sql_safe_updates = 0
+
+delete from books where title = 'To Kill a Mockingbird'
+
+alter table books 
+add column color varchar(50) after genre,
+add column price int not null
+
+alter table books
+drop column color
+
+alter table books
+modify column price float
+
+create table members(
+member_id int primary key auto_increment,
+FirstName varchar(50),
+LastName varchar(50),
+PhoneNumber int,
+Email varchar(50),
+MemberShipDate date)

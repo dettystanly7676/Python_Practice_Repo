@@ -1,0 +1,43 @@
+TABLEAU
+
+-> extract a table to the tableau
+	Extract Excel -> drag and drop a table to the right
+
+-> transformations can be done on each column on the table
+
+-> to view sheet view - click on sheet1 in the left dwon corner
+
+-> visulaization can be done convienently
+
+-> swap rows and column will visually edit the image
+
+-> tooltip - used to add additional clumns r rows
+
+-> remove header - right click on row/column -> hide
+
+combined chart
+
+-> combining 2 data(columns) in a sheet
+
+-> Filtering - to show relevant data using conditions from condition tab, top data using Top tab
+				to give user interaction -> drop down the generated filter -> show filter
+				This feature helps the user to interact
+				
+-> to create a new field in a data set 
+	create calculated field -> type on the equation -> OK
+	calculated field will be visible in the field section on left side
+	when it is dragged in a new sheet the va;ues will be zero
+	to change that,
+	select the field -> right click -> format -> go to the top left corner -> click on specific options(AGG, SUM ..) -> change the numbers to your convienent format
+	
+creating a hierarchy
+	-> click on a field -> down arrow -> hierarchy -> create hierarchy
+	-> click on a field to add to the created hierarchy -> down arrow -> hierarchy -> add to hierarchy -> hierarchy_name
+	
+adding a new shape to the shapes
+	-> download shape from browser -> create a folder in Documents-my tableau repository-create a folder(folder_name)-copy the downloaded image
+	go to the tableau -> click on shaepes -> more -> reload shapes -> select shape pallete -> created image will be visible in the list
+	
+DASHBOARD
+	click on new dashboard -> change size to automatic
+	
